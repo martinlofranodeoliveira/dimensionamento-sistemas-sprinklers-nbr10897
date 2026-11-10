@@ -12,6 +12,7 @@ import argparse
 from pathlib import Path
 import sys
 
+from sprinklers_nbr10897 import __version__
 from sprinklers_nbr10897.calculator import calcular_sprinklers_nbr10897
 from sprinklers_nbr10897.codecs import (
     codificar_resultado_json,
@@ -86,7 +87,8 @@ def comando_catalogo(args: argparse.Namespace) -> int:
 
 def comando_gerar_exemplo(args: argparse.Namespace) -> int:
     """Gera arquivo JSON com exemplo pronto para dimensionamento."""
-    tipo = getattr(args, "tipo", "risco_leve")
+    tipo_raw = getattr(args, "tipo", "risco_leve")
+    tipo = str(tipo_raw).replace("-", "_")
     if tipo not in CLASSES_RISCO_OCUPACAO:
         tipo = "risco_leve"
 
@@ -255,35 +257,35 @@ def comando_calcular(args: argparse.Namespace) -> int:
     # Saídas solicitadas
     relatorio_txt = gerar_relatorio_texto(resultado)
 
-    if args.saida_txt:
+    if getattr(args, "saida_txt", None):
         p_txt = Path(args.saida_txt).resolve()
         p_txt.parent.mkdir(parents=True, exist_ok=True)
         p_txt.write_text(relatorio_txt, encoding="utf-8")
         print(f"[TXT] Relatório gravado em '{p_txt}'")
 
-    if args.saida_json:
+    if getattr(args, "saida_json", None):
         p_json = Path(args.saida_json).resolve()
         p_json.parent.mkdir(parents=True, exist_ok=True)
         p_json.write_text(codificar_resultado_json(resultado), encoding="utf-8")
         print(f"[JSON] Resultado gravado em '{p_json}'")
 
-    if args.saida_csv:
+    if getattr(args, "saida_csv", None):
         p_csv = Path(args.saida_csv).resolve()
         p_csv.parent.mkdir(parents=True, exist_ok=True)
         p_csv.write_text(gerar_csv_trechos(resultado), encoding="utf-8")
         print(f"[CSV] Planilha de trechos gravada em '{p_csv}'")
 
     svg_conteudo: str | None = None
-    if args.saida_svg or args.pacote_zip:
+    if getattr(args, "saida_svg", None) or getattr(args, "pacote_zip", None) or getattr(args, "formato", None) in ("svg", "zip"):
         svg_conteudo = gerar_painel_svg(resultado)
 
-    if args.saida_svg and svg_conteudo:
+    if getattr(args, "saida_svg", None) and svg_conteudo:
         p_svg = Path(args.saida_svg).resolve()
         p_svg.parent.mkdir(parents=True, exist_ok=True)
         p_svg.write_text(svg_conteudo, encoding="utf-8")
         print(f"[SVG] Painel executivo gravado em '{p_svg}'")
 
-    if args.pacote_zip:
+    if getattr(args, "pacote_zip", None):
         p_zip = Path(args.pacote_zip).resolve()
         criar_pacote_zip_deterministico(
             p_zip,
@@ -293,8 +295,40 @@ def comando_calcular(args: argparse.Namespace) -> int:
         )
         print(f"[ZIP] Pacote determinístico gerado em '{p_zip}'")
 
-    # Exibe relatório no console
-    print(relatorio_txt)
+    # Suporte ao parâmetro --formato
+    formato = getattr(args, "formato", "texto")
+    saida_especifica = getattr(args, "saida", None)
+
+    if formato == "json":
+        json_out = codificar_resultado_json(resultado)
+        if saida_especifica:
+            Path(saida_especifica).write_text(json_out, encoding="utf-8")
+        else:
+            print(json_out)
+    elif formato == "csv":
+        csv_out = gerar_csv_trechos(resultado)
+        if saida_especifica:
+            Path(saida_especifica).write_text(csv_out, encoding="utf-8")
+        else:
+            print(csv_out)
+    elif formato == "svg":
+        if not svg_conteudo:
+            svg_conteudo = gerar_painel_svg(resultado)
+        if saida_especifica:
+            Path(saida_especifica).write_text(svg_conteudo, encoding="utf-8")
+        else:
+            print(svg_conteudo)
+    elif formato == "zip":
+        if saida_especifica:
+            criar_pacote_zip_deterministico(saida_especifica, resultado, conteudo_svg=svg_conteudo, sobrescrever=True)
+        else:
+            sys.stderr.write("Aviso: formato 'zip' requer especificar --saida <caminho.zip>\n")
+    else:
+        if saida_especifica:
+            Path(saida_especifica).write_text(relatorio_txt, encoding="utf-8")
+        else:
+            print(relatorio_txt)
+
     return 0
 
 
@@ -304,11 +338,30 @@ def main(argv: list[str] | None = None) -> int:
         prog="sprinklers-nbr10897",
         description="Dimensionamento de Chuveiros Automáticos (Sprinklers) - ABNT NBR 10897:2020",
     )
+    parser.add_argument(
+        "--versao",
+        "-v",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="Exibe a versão instalada do programa.",
+    )
     subparsers = parser.add_subparsers(dest="comando", required=True)
 
     # Subcomando 'calcular'
     parser_calc = subparsers.add_parser("calcular", help="Calcula instalação de sprinklers a partir de arquivo JSON")
     parser_calc.add_argument("arquivo", help="Caminho do arquivo JSON de instalação")
+    parser_calc.add_argument(
+        "--formato",
+        "-f",
+        choices=["texto", "json", "csv", "svg", "zip"],
+        default="texto",
+        help="Formato do resultado de saída (padrão: texto).",
+    )
+    parser_calc.add_argument(
+        "--saida",
+        "-o",
+        help="Arquivo de destino (se omitido, imprime no terminal).",
+    )
     parser_calc.add_argument("--saida-json", help="Exporta resultado em formato JSON RFC 8259")
     parser_calc.add_argument("--saida-txt", help="Exporta relatório técnico executivo em texto puro")
     parser_calc.add_argument("--saida-csv", help="Exporta tabela de trechos hidráulicos em CSV")
@@ -324,9 +377,8 @@ def main(argv: list[str] | None = None) -> int:
     parser_ex = subparsers.add_parser("gerar-exemplo", help="Gera arquivo de entrada JSON de exemplo")
     parser_ex.add_argument(
         "--tipo",
-        choices=["risco_leve", "risco_ordinario_1", "risco_extra_1"],
         default="risco_leve",
-        help="Tipo de ocupação de exemplo",
+        help="Tipo de ocupação de exemplo (ex: risco_leve, risco-leve, risco_ordinario_1, risco_extra_1)",
     )
     parser_ex.add_argument("--saida", help="Caminho de saída para o arquivo JSON gerado")
     parser_ex.set_defaults(funcao=comando_gerar_exemplo)
