@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#162032"/>
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <!-- Plano de Fundo -->
+  <rect width="1440" height="900" fill="url(#bgGrad)"/>
+
+  <!-- Cabeçalho -->
+  <rect x="40" y="30" width="1360" height="90" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="30" width="6" height="90" rx="3" fill="url(#redAccent)"/>
+  <text x="65" y="65" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">LOFRANO TECNOLOGIA | DIMENSIONAMENTO DE SISTEMAS DE SPRINKLERS</text>
+  <text x="65" y="95" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">ABNT NBR 10897:2020 • Projeto: <tspan fill="#38bdf8" font-weight="600">Edifício Corporativo Paulista - Pavimento Tipo</tspan> • Ocupação: <tspan fill="#cbd5e1">Risco Leve (RL) - Habitações, Hotéis, Escritórios, Escolas</tspan></text>
+  <rect x="1140" y="55" width="230" height="40" rx="20" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+  <circle cx="1160" cy="75" r="6" fill="#10b981"/>
+  <text x="1178" y="80" fill="#10b981" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700">CONFORME NBR 10897:2020</text>
+
+  <!-- Indicadores KPI -->
+  <!-- KPI 1: Vazão Total -->
+  <g transform="translate(40, 140)">
+    <rect width="255" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">VAZÃO TOTAL DO SISTEMA</text>
+    <text x="20" y="70" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="28" font-weight="800">1160,6</text>
+    <text x="180" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">L/min</text>
+    <text x="20" y="88" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Sprinklers: 780,6 L/min</text>
+  </g>
+
+  <!-- KPI 2: Bicos em Operação -->
+  <g transform="translate(315, 140)">
+    <rect width="255" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">BICOS EM OPERAÇÃO</text>
+    <text x="20" y="70" fill="#f97316" font-family="system-ui, sans-serif" font-size="28" font-weight="800">12</text>
+    <text x="80" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">chuveiros (K80)</text>
+    <text x="20" y="88" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Área Cálculo: 139,0 m²</text>
+  </g>
+
+  <!-- KPI 3: Reserva Técnica (RTI) -->
+  <g transform="translate(590, 140)">
+    <rect width="255" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">RESERVA TÉCNICA (RTI)</text>
+    <text x="20" y="70" fill="#10b981" font-family="system-ui, sans-serif" font-size="28" font-weight="800">34,8</text>
+    <text x="140" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">m³</text>
+    <text x="20" y="88" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Autonomia: 30 min</text>
+  </g>
+
+  <!-- KPI 4: Altura Manométrica -->
+  <g transform="translate(865, 140)">
+    <rect width="255" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">ALTURA MANOMÉTRICA (Hman)</text>
+    <text x="20" y="70" fill="#a855f7" font-family="system-ui, sans-serif" font-size="28" font-weight="800">135,5</text>
+    <text x="160" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">mca</text>
+    <text x="20" y="88" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Bico Crítico: 5,0 mca</text>
+  </g>
+
+  <!-- KPI 5: Moto-Bomba -->
+  <g transform="translate(1140, 140)">
+    <rect width="260" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="20" y="32" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600">MOTO-BOMBA PRINCIPAL</text>
+    <text x="20" y="70" fill="#ef4444" font-family="system-ui, sans-serif" font-size="28" font-weight="800">60</text>
+    <text x="75" y="68" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">cv comercial</text>
+    <text x="20" y="88" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Cálculo: 53,78 cv (η=65%)</text>
+  </g>
+
+  <!-- Painel Esquerdo: Esquema Hidráulico da Instalação -->
+  <g transform="translate(40, 260)">
+    <rect width="780" height="570" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="25" y="35" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">DIAGRAMA HIDRÁULICO DO SISTEMA (NBR 10897 / NBR 5580)</text>
+    <text x="25" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Reservatório RTI ➔ Conjunto Moto-Bomba ➔ VGA ➔ Coluna Principal ➔ Ramais de Sprinklers</text>
+
+    <!-- Reservatório de Incêndio -->
+    <g transform="translate(40, 340)">
+      <rect width="130" height="160" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="2"/>
+      <rect x="5" y="40" width="120" height="115" rx="4" fill="#0284c7" fill-opacity="0.3"/>
+      <text x="65" y="25" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">RESERVATÓRIO</text>
+      <text x="65" y="90" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">RTI</text>
+      <text x="65" y="115" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle">34,8 m³</text>
+    </g>
+
+    <!-- Tubulação de Sucção -->
+    <path d="M 170 460 L 220 460" stroke="#38bdf8" stroke-width="6" fill="none"/>
+
+    <!-- Moto-Bomba de Incêndio -->
+    <g transform="translate(220, 410)">
+      <circle cx="45" cy="50" r="35" fill="#1e293b" stroke="#ef4444" stroke-width="3"/>
+      <polygon points="40,30 65,50 40,70" fill="#ef4444"/>
+      <rect x="15" y="88" width="60" height="8" rx="2" fill="#64748b"/>
+      <text x="45" y="115" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">BOMBA 60 CV</text>
+      <text x="45" y="130" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">Hman: 135,5 mca</text>
+    </g>
+
+    <!-- Recalque / VGA -->
+    <path d="M 300 460 L 350 460 L 350 360" stroke="#ef4444" stroke-width="6" fill="none"/>
+    <!-- Bloco VGA -->
+    <g transform="translate(325, 290)">
+      <rect width="50" height="65" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+      <text x="25" y="28" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="10" font-weight="700" text-anchor="middle">VGA</text>
+      <text x="25" y="45" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Gongo</text>
+      <circle cx="25" cy="55" r="3" fill="#f59e0b"/>
+    </g>
+
+    <!-- Coluna Principal (Riser) -->
+    <path d="M 350 290 L 350 130 L 450 130" stroke="#f97316" stroke-width="6" fill="none"/>
+    <text x="360" y="210" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Coluna Montante (Riser)</text>
+
+    <!-- Ramais e Bicos de Sprinklers -->
+    <g transform="translate(450, 80)">
+      <!-- Tubo Distribuidor Principal -->
+      <line x1="0" y1="50" x2="280" y2="50" stroke="#f97316" stroke-width="5"/>
+      <!-- Ramal Superior -->
+      <line x1="60" y1="50" x2="60" y2="20" stroke="#38bdf8" stroke-width="3"/>
+      <line x1="20" y1="20" x2="100" y2="20" stroke="#38bdf8" stroke-width="3"/>
+      <!-- Bicos Ramal 1 -->
+      <circle cx="30" cy="20" r="4" fill="#ef4444"/>
+      <circle cx="90" cy="20" r="4" fill="#ef4444"/>
+      <!-- Borrifo água 1 -->
+      <path d="M 30 15 L 20 0 M 30 15 L 30 -2 M 30 15 L 40 0" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M 90 15 L 80 0 M 90 15 L 90 -2 M 90 15 L 100 0" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Ramal Central -->
+      <line x1="160" y1="50" x2="160" y2="120" stroke="#38bdf8" stroke-width="3"/>
+      <line x1="120" y1="120" x2="200" y2="120" stroke="#38bdf8" stroke-width="3"/>
+      <!-- Bicos Ramal 2 -->
+      <circle cx="130" cy="120" r="4" fill="#ef4444"/>
+      <circle cx="190" cy="120" r="4" fill="#ef4444"/>
+      <!-- Borrifo água 2 -->
+      <path d="M 130 125 L 120 140 M 130 125 L 130 143 M 130 125 L 140 140" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M 190 125 L 180 140 M 190 125 L 190 143 M 190 125 L 200 140" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Ramal Crítico (Mais Desfavorável) -->
+      <line x1="250" y1="50" x2="250" y2="200" stroke="#ef4444" stroke-width="3" stroke-dasharray="4,2"/>
+      <line x1="200" y1="200" x2="270" y2="200" stroke="#ef4444" stroke-width="3"/>
+      <circle cx="260" cy="200" r="6" fill="#ef4444" stroke="#f8fafc" stroke-width="2"/>
+      <text x="260" y="235" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">BICO CRÍTICO</text>
+      <text x="260" y="250" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">P = 5,0 mca</text>
+      <text x="260" y="265" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">q = 56,6 L/min</text>
+    </g>
+  </g>
+
+  <!-- Painel Direito: Tabela de Trechos e Parecer Técnico -->
+  <g transform="translate(840, 260)">
+    <rect width="560" height="570" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" filter="url(#cardShadow)"/>
+    <text x="25" y="35" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="700">TRECHOS HIDRÁULICOS (NBR 5580)</text>
+    <text x="25" y="58" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Perdas de carga contínuas, conexões e velocidades</text>
+
+    <!-- Cabeçalho Tabela -->
+    <rect x="25" y="80" width="510" height="30" rx="4" fill="#0f172a"/>
+    <text x="35" y="100" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">TRECHO</text>
+    <text x="180" y="100" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">DN</text>
+    <text x="260" y="100" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">L.TOT(m)</text>
+    <text x="350" y="100" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">ΔH(mca)</text>
+    <text x="445" y="100" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" font-weight="700">v(m/s)</text>
+    <rect x="25" y="114" width="510" height="26" rx="2" fill="#162032"/>
+    <text x="35" y="130" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11">SUCCAO_BOMBA</text>
+    <text x="180" y="130" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11">3 pol</text>
+    <text x="260" y="130" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">9,8</text>
+    <text x="350" y="130" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">1,21</text>
+    <text x="445" y="130" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">2,53</text>
+    <rect x="25" y="142" width="510" height="26" rx="2" fill="#1e293b"/>
+    <text x="35" y="158" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11">BARRILETE_VGA</text>
+    <text x="180" y="158" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11">2 1/2 pol</text>
+    <text x="260" y="158" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">32,0</text>
+    <text x="350" y="158" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">8,92</text>
+    <text x="445" y="158" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">3,51</text>
+    <rect x="25" y="170" width="510" height="26" rx="2" fill="#162032"/>
+    <text x="35" y="186" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11">COLUNA_PRUMADA</text>
+    <text x="180" y="186" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11">2 1/2 pol</text>
+    <text x="260" y="186" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">29,6</text>
+    <text x="350" y="186" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">8,25</text>
+    <text x="445" y="186" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">3,51</text>
+    <rect x="25" y="198" width="510" height="26" rx="2" fill="#1e293b"/>
+    <text x="35" y="214" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11">RAMAL_PAVIMENTO_..</text>
+    <text x="180" y="214" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11">1 1/2 pol</text>
+    <text x="260" y="214" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">27,6</text>
+    <text x="350" y="214" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">91,17</text>
+    <text x="445" y="214" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">9,44</text>
+
+    <!-- Caixa de Parecer Normativo -->
+    <g transform="translate(25, 340)">
+      <rect width="510" height="200" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="20" y="30" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="700">PARECER TÉCNICO NORMATIVO</text>
+      <text x="20" y="60" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Pressão governada pelo mínimo normativo de 5 mca (vazão aumentada de 200...</text>
+      <line x1="20" y1="160" x2="490" y2="160" stroke="#1e293b" stroke-width="1"/>
+      <text x="20" y="182" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Dimensionamento estritamente conforme ABNT NBR 10897:2020 e NBR 5580.</text>
+    </g>
+  </g>
+
+  <!-- Rodapé -->
+  <text x="720" y="870" fill="#64748b" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">Engenharia de Incêndio • Lofrano Tecnologia 2026 • 100% Aritmética Racional Exata (Zero Float)</text>
+</svg>

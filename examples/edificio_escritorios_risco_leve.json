@@ -1,0 +1,70 @@
+{
+  "projeto": "Edifício Corporativo Paulista - Pavimento Tipo",
+  "classe_risco": "risco_leve",
+  "area_compartimento_m2": "850",
+  "margem_desbalanceamento_pct": "15",
+  "rendimento_bomba": "65/100",
+  "bico": {
+    "modelo_fator_k": "K80",
+    "espacamento_s_m": "3.5",
+    "espacamento_l_m": "3.5"
+  },
+  "trechos": [
+    {
+      "identificador": "SUCCAO_BOMBA",
+      "tubo_id": "3_pol",
+      "comprimento_real_m": "6",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 1,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "BARRILETE_VGA",
+      "tubo_id": "2_1_2_pol",
+      "comprimento_real_m": "12",
+      "desnivel_geometrico_m": "3",
+      "tem_vga": true,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 1
+      }
+    },
+    {
+      "identificador": "COLUNA_PRUMADA",
+      "tubo_id": "2_1_2_pol",
+      "comprimento_real_m": "24",
+      "desnivel_geometrico_m": "18",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 0,
+        "te_passagem_direta": 4,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "RAMAL_PAVIMENTO_TIPO",
+      "tubo_id": "1_1_2_pol",
+      "comprimento_real_m": "15",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 3,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    }
+  ]
+}

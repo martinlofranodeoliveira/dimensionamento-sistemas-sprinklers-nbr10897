@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dimensionamento-sistemas-sprinklers-nbr10897"
+version = "1.0.0"
+description = "Motor analítico e CLI para dimensionamento de sistemas de chuveiros automáticos (sprinklers) conforme ABNT NBR 10897:2020 em Python puro com aritmética exata."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Lofrano Tecnologia", email = "contato@lofranotecnologia.com.br" }
+]
+keywords = [
+    "engenharia-civil",
+    "combate-a-incendio",
+    "sprinklers",
+    "chuveiros-automaticos",
+    "nbr-10897",
+    "fator-k",
+    "reserva-tecnica-incendio",
+    "bomba-incendio",
+    "valvula-governo-alarme",
+    "python-puro"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Typing :: Typed"
+]
+dependencies = []
+
+[project.scripts]
+sprinklers-nbr10897 = "sprinklers_nbr10897.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sprinklers_nbr10897 = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v"

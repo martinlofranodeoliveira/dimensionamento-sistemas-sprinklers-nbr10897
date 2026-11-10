@@ -1,0 +1,70 @@
+{
+  "projeto": "Complexo Logístico Rodoanel - Galpão Químico",
+  "classe_risco": "risco_extra_1",
+  "area_compartimento_m2": "1500",
+  "margem_desbalanceamento_pct": "15",
+  "rendimento_bomba": "65/100",
+  "bico": {
+    "modelo_fator_k": "K160",
+    "espacamento_s_m": "2.8",
+    "espacamento_l_m": "3.0"
+  },
+  "trechos": [
+    {
+      "identificador": "SUCCAO_BOMBA",
+      "tubo_id": "6_pol",
+      "comprimento_real_m": "10",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "RECALQUE_VGA",
+      "tubo_id": "4_pol",
+      "comprimento_real_m": "18",
+      "desnivel_geometrico_m": "4",
+      "tem_vga": true,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 1
+      }
+    },
+    {
+      "identificador": "COLUNA_PRINCIPAL",
+      "tubo_id": "4_pol",
+      "comprimento_real_m": "30",
+      "desnivel_geometrico_m": "12",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 0,
+        "te_passagem_direta": 5,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "SUBRAMAL_DISTRIBUICAO",
+      "tubo_id": "2_1_2_pol",
+      "comprimento_real_m": "20",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 3,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 4,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    }
+  ]
+}

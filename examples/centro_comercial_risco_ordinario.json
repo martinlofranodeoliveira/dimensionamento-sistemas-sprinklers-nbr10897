@@ -1,0 +1,70 @@
+{
+  "projeto": "Shopping Center Jardins - Praça e Lojas",
+  "classe_risco": "risco_ordinario_1",
+  "area_compartimento_m2": "600",
+  "margem_desbalanceamento_pct": "15",
+  "rendimento_bomba": "65/100",
+  "bico": {
+    "modelo_fator_k": "K80",
+    "espacamento_s_m": "3.0",
+    "espacamento_l_m": "3.5"
+  },
+  "trechos": [
+    {
+      "identificador": "SUCCAO_BOMBA",
+      "tubo_id": "4_pol",
+      "comprimento_real_m": "8",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "RECALQUE_VGA",
+      "tubo_id": "3_pol",
+      "comprimento_real_m": "15",
+      "desnivel_geometrico_m": "4",
+      "tem_vga": true,
+      "conexoes": {
+        "joelho_90": 3,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 1,
+        "valvula_retencao": 1
+      }
+    },
+    {
+      "identificador": "COLUNA_RISER",
+      "tubo_id": "3_pol",
+      "comprimento_real_m": "25",
+      "desnivel_geometrico_m": "20",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 0,
+        "te_passagem_direta": 4,
+        "te_saida_lateral": 0,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    },
+    {
+      "identificador": "RAMAL_DISTRIBUIDOR",
+      "tubo_id": "2_pol",
+      "comprimento_real_m": "18",
+      "desnivel_geometrico_m": "0",
+      "tem_vga": false,
+      "conexoes": {
+        "joelho_90": 2,
+        "te_passagem_direta": 0,
+        "te_saida_lateral": 3,
+        "valvula_gaveta": 0,
+        "valvula_retencao": 0
+      }
+    }
+  ]
+}
